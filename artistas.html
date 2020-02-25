@@ -29,16 +29,33 @@
 
     <!-- INFORMACION ARTISTAS -->
 
-    <div id="app" style="padding-left: 30px;">
-        <br>
-        <hr>
-        <br>
-        <h1 style="text-align: center;"><b>ARTISTAS</b></h1>
-        <div v-for="ar in artistas">
-            <br>
-            <p>Name: {{ ar[1] }}</p>
-            </br>
+    <br>
+    <hr>
+    <br>
+    <h1 class="textoCentrado">ARTISTAS</h1>
+
+    <br>
+    <hr>
+    <br>
+
+    <div id="app">
+        <div class="bloque" v-if="artistFilter && artistFilter.length">
+            <div v-for="ar in artistasFinal">
+                <div v-if="!ar.error">
+                    <div class="card">
+                        <div class="card-header">{{ ar.name }}</div>
+                        <div class="card-main">
+                            <img :src="ar.picture_medium" alt="Imagen">
+                            <br>
+                            <h4 class="main-description">Fans: {{ ar.nb_fan }}</h4>
+                            <h4 class="main-description">Numero de albumes: {{ ar.nb_album }}</h4>
+                            <button v-on:click="canciones(ar.id)" class="boton">Canciones</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <br>
@@ -68,7 +85,8 @@
     <script src="layout/scripts/jquery.mobilemenu.js "></script>
     <script src="https://unpkg.com/vue "></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
-    <script src="layout/scripts/app.js "></script>
+    <script src="app.js "></script>
+
 </body>
 
 </html>

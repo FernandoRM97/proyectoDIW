@@ -1,16 +1,19 @@
+/* jshint esversion: 6 */
+
 var artistas = [];
 var artista = {};
 
-for (var index = 1; index < 20; index++) {
-    new Vue({
-        el: "#app",
-        data: {
-            textSearch: ""
-        },
-        created() {
+new Vue({
+    el: "#app",
+    data: {
+        textSearch: "",
+        artistasFinal: []
+    },
+    created() {
+        for (let i = 1; i < 50; i++) {
             axios({
                     "method": "GET",
-                    "url": "https://deezerdevs-deezer.p.rapidapi.com/artist/" + index,
+                    "url": "https://deezerdevs-deezer.p.rapidapi.com/artist/" + i,
                     "headers": {
                         "content-type": "application/octet-stream",
                         "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -21,20 +24,21 @@ for (var index = 1; index < 20; index++) {
                     this.artista = response.data;
                     console.log('valor actual', this.artista);
                     artistas.push(this.artista);
-                    console.log('array final', artistas);
+                    this.artistasFinal = artistas;
+                    console.log('array artistas', this.artistasFinal);
                 })
                 .catch((error) => {
                     console.log(error);
                 });
-        },
-        computed: {
-            artistFilter() {
-                var textSearch = this.textSearch;
-                return this.artist.filter(function(el) {
-                    return el.name.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1;
-                });
-            }
         }
-    });
+    },
+    computed: {
+        artistFilter() {
+            var textSearch = this.textSearch;
+            return this.artistasFinal.filter(function(el) {
+                return el.name.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1;
+            });
+        }
+    }
 
-}
+});

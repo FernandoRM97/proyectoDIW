@@ -1,56 +1,8 @@
 @charset "utf-8";
 @import url("font-awesome.min.css");
 @import url("framework.css");
-#header {
-    padding: 30px 0;
-    text-align: center;
-}
-
-#header * {
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
-
-#header h1 {
-    font-size: 36px;
-    letter-spacing: 3px;
-}
-
-#header p {
-    font-size: .9rem;
-    text-transform: lowercase;
-}
-
 .container {
     padding: 80px 0;
-}
-
-.sectiontitle {
-    display: block;
-    margin-bottom: 80px;
-    text-align: center;
-}
-
-.sectiontitle * {
-    margin: 0;
-}
-
-.sectiontitle .heading {
-    display: inline-block;
-    position: relative;
-    padding-bottom: 8px;
-}
-
-.sectiontitle .heading::after {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 50px;
-    height: 2px;
-    margin-left: -25px;
-    content: "";
 }
 
 .heading i {
@@ -365,7 +317,7 @@ nav ol {
 }
 
 body {
-    color: #CBCBCB;
+    color: black;
     background-color: #2B2F32;
 }
 
@@ -866,4 +818,82 @@ body {
 .textoCentrado {
     text-align: center;
     margin: 5px;
+}
+
+
+/* CARDS */
+
+.card {
+    width: 280px;
+    /* Set width of cards */
+    display: flex;
+    /* Children use Flexbox */
+    flex-direction: column;
+    /* Rotate Axis */
+    border: 1px solid lightgray;
+    /* Set up Border */
+    border-radius: 4px;
+    /* Slightly Curve edges */
+    overflow: hidden;
+    /* Fixes the corners */
+    margin: 5px;
+    /* Add space between cards */
+    padding: 5px;
+}
+
+.card-header {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+}
+
+.card-main {
+    display: flex;
+    /* Children use Flexbox */
+    flex-direction: column;
+    /* Rotate Axis to Vertical */
+    justify-content: center;
+    /* Group Children in Center */
+    align-items: center;
+    /* Group Children in Center (on cross axis) */
+    padding: 15px 0;
+    /* Add padding to the top/bottom */
+}
+
+.main-description {
+    font-size: 12px;
+    text-align: center;
+}
+
+.bloque {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+/* BARRA BUSQUEDA */
+
+.input-search {
+    width: 100%;
+    padding: 5px;
+}
+
+.boton {
+    width: 100%;
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: black;
+    background-color: lightgray;
+    border-radius: 15px;
+    border: 2px double black;
 }

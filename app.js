@@ -42,3 +42,43 @@ new Vue({
     }
 
 });
+
+function canciones(name) {
+    new Vue({
+        el: "#app2",
+        data: {
+            textSearch: "",
+            cancionesFinal: []
+        },
+        created() {
+            axios({
+                    "method": "GET",
+                    "url": "https://deezerdevs-deezer.p.rapidapi.com/search",
+                    "headers": {
+                        "content-type": "application/octet-stream",
+                        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+                        "x-rapidapi-key": "6e442364dcmshb440a2786cdbddap15aa49jsn2271087dd077"
+                    },
+                    "params": {
+                        "q": name
+                    }
+                })
+                .then((response) => {
+                    this.cancionesFinal = response.data;
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+        computed: {
+            artistFilter() {
+                var textSearch = this.textSearch;
+                return this.artistasFinal.filter(function(el) {
+                    return el.name.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1;
+                });
+            }
+        }
+
+    });
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>DIW Radio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="SASS/main.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body id="top">
+
+    <!-- NABVAR -->
+
+    <div class="wrapper row0" style="background-color: rgb(56, 56, 56);">
+        <nav id="mainav" class="hoc clear">
+            <ul class="clear">
+                <li class="active">
+                    <a href="index.html"><img src="https://www.pngkey.com/png/full/964-9645557_sound-waves-png-ondas-de-sonido-png.png" class="logo"></a>
+                </li>
+                <li><a href="artistas.html">Artistas</a></li>
+                <li><a href="canciones.html">Canciones</a></li>
+                <li><a href="radio.html">Radio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <!-- VIDEO DE LA RADIO -->
+    <div class="textoCentrado video-responsive">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIWVfkF2IeI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <!-- INFORMACION DE LA RADIO-->
+
+    <div id="app3">
+        <div class="bloque">
+            <div class="card">
+                <div class="card-header">{{ radio['title'] }}</div>
+                <div class="card-main">
+                    <img :src="radio['cover_big']" alt="Imagen">
+                    <br>
+                    <h4 class="main-description">Compañia: {{ radio['label'] }}</h4>
+                    <h4 class="main-description">Fans: {{ radio['fans'] }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <h3 class="textoCentrado">CANCIONES MAS ESCUCHADAS</h3>
+
+    <br>
+    <hr>
+    <br>
+
+    <!-- SACA DE LA API LAS CANCIONES MAS ESCUCHADAS CON OPCION A ESCUCHARLA -->
+    <div id="app4">
+        <div class="bloque">
+            <div v-for="ar in radio">
+                <div v-if="!ar.error">
+                    <div class="card">
+                        <div class="card-header">{{ ar.title }}</div>
+                        <div class="card-main">
+                            <h4 class="main-description">Ranking Mundial: {{ ar.rank }}</h4>
+                            <br>
+                            <audio :src="ar.preview" preload="auto" controls></audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <!-- FOOTER -->
+
+    <div class="wrapper row4 ">
+        <footer id="footer " class="hoc clear ">
+            <div class="iconos ">
+                <ul class="faico clear ">
+                    <li><a class="faicon-facebook " href=" "><i class="fa fa-facebook "></i></a></li>
+                    <li><a class="faicon-twitter " href=" "><i class="fa fa-twitter "></i></a></li>
+                    <li><a class="faicon-dribble " href=" "><i class="fa fa-dribbble "></i></a></li>
+                </ul>
+            </div>
+            <br>
+            <div class="google-maps ">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.440668097308!2d-5.874608784527297!3d37.54468033313681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd125ce674c4c581%3A0x895a6af50037a460!2sClub%20Deportivo%20Ies%20Jacaranda!5e0!3m2!1ses!2ses!4v1582113997834!5m2!1ses!2ses "
+                    frameborder="0 " style="border:0; " allowfullscreen=" "></iframe>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/vue "></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
+    <script src="js/app.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobilemenu.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+/* NAVBAR */
+
+#mainav li a {
+    color: #FFFFFF;
+}
+
+#mainav .active a,
+#mainav a:hover,
+#mainav li:hover>a {
+    color: #74D3D3;
+    background-color: inherit;
+}
+
+#mainav li li a,
+#mainav .active li a {
+    color: #FFFFFF;
+    background-color: rgba(51, 54, 59, .65)/* #33363B */
+    ;
+    border-color: rgba(51, 54, 59, .65)/* #33363B */
+    ;
+}
+
+#mainav li li:hover>a,
+#mainav .active .active>a {
+    color: #FFFFFF;
+    background-color: #74D3D3;
+}
+
+#mainav form select {
+    color: #FFFFFF;
+    background-color: #2B2F32;
+    border-color: rgba(255, 255, 255, .2);
+    /* #FFFFFF */
+}
+
+.container .sidebar nav a {
+    color: inherit;
+    border-color: #D7D7D7;
+}
+
+.container .sidebar nav a:hover {
+    color: #74D3D3;
+}
+
+#mainav ul {
+    text-transform: uppercase;
+}
+
+#mainav ul ul {
+    z-index: 9999;
+    position: absolute;
+    width: 180px;
+    text-transform: none;
+    text-align: left;
+}
+
+#mainav ul ul ul {
+    left: 180px;
+    top: 0;
+}
+
+#mainav li {
+    display: inline-block;
+    position: relative;
+    margin: 0 30px 0 0;
+    padding: 0;
+}
+
+#mainav li:last-child {
+    margin-right: 0;
+}
+
+#mainav li li {
+    width: 100%;
+    margin: 0;
+}
+
+#mainav li a {
+    display: block;
+    padding: 20px 0;
+}
+
+#mainav li li a {
+    border: solid;
+    border-width: 0 0 1px 0;
+}
+
+#mainav .drop {
+    padding-left: 15px;
+}
+
+#mainav li li a,
+#mainav li li .drop {
+    display: block;
+    margin: 0;
+    padding: 10px 15px;
+}
+
+#mainav .drop::after,
+#mainav li li .drop::after {
+    content: "\f0d7";
+}
+
+#mainav .drop::after {
+    top: 25px;
+    left: 5px;
+}
+
+#mainav li li .drop::after {
+    top: 15px;
+    left: 5px;
+}
+
+#mainav ul ul {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#mainav ul li:hover>ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+#mainav form {
+    display: none;
+    margin: 0;
+    padding: 20px 0;
+}
+
+#mainav form select,
+#mainav form select option {
+    display: block;
+    cursor: pointer;
+    outline: none;
+}
+
+#mainav form select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid;
+}
+
+#mainav form select option {
+    margin: 5px;
+    padding: 0;
+    border: none;
+}
+
+/* NAVBAR MOVIL */
+
+.sidebar nav {
+    display: block;
+    width: 100%;
+}
+
+.sidebar nav li {
+    margin: 0 0 3px 0;
+    padding: 0;
+}
+
+.sidebar nav a {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 5px 10px 5px 15px;
+    text-decoration: none;
+    border: solid;
+    border-width: 0 0 1px 0;
+}
+
+.sidebar nav a::after {
+    top: 9px;
+    left: 5px;
+    content: "\f101";
+}
+
+.sidebar nav ul ul a {
+    padding-left: 35px;
+}
+
+.sidebar nav ul ul a::after {
+    left: 25px;
+}
+
+.sidebar nav ul ul ul a {
+    padding-left: 55px;
+}
+
+.sidebar nav ul ul ul a::after {
+    left: 45px;
+}
+
+.faico {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.faico li {
+    display: inline-block;
+    margin: 8px 5px 0 0;
+    padding: 0;
+    line-height: normal;
+}
+
+.faico li:last-child {
+    margin-right: 0;
+}
+
+.faico a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.faico a {
+    color: inherit;
+}
+
+.faicon-dribble:hover {
+    color: #EA4C89;
+}
+
+.faicon-facebook:hover {
+    color: #3B5998;
+}
+
+.faicon-twitter:hover {
+    color: #00ACEE;
+}
+
+body {
+    color: black;
+    background-color: #2B2F32;
+}
+
+a {
+    color: #74D3D3;
+}
+
+a:active,
+a:focus {
+    background: transparent;
+}
+
+hr,
+.borderedbox {
+    border-color: #D7D7D7;
+}
+
+label span {
+    color: #FF0000;
+    background-color: inherit;
+}
+
+input:focus,
+textarea:focus,
+*:required:focus {
+    border-color: #56AED4;
+}

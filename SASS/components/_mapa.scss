@@ -1,0 +1,21 @@
+/* MAPA */
+
+.google-maps {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: -300px;
+}
+
+.google-maps iframe {
+    position: absolute;
+    width: 100% !important;
+    height: 50% !important;
+}
+
+@media screen and (max-width:650px) {
+    .google-maps {
+        margin-bottom: 0px;
+    }
+}

@@ -1,22 +1,24 @@
+@import 'core/variables';
+
 /* BARRA BUSQUEDA */
 
 .input-search {
-    width: 100%;
-    padding: 5px;
+    width: $widthBarra;
+    padding: $paddingBarra;
 }
 
 .boton {
-    width: 100%;
+    width: $widthBoton;
     text-decoration: none;
-    padding: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: $paddingBoton;
+    padding-left: $paddingBotonL;
+    padding-right: $paddingBotonR;
     font-family: helvetica;
     font-weight: 300;
     font-size: 25px;
     font-style: italic;
     color: black;
-    background-color: lightgray;
+    background-color: $backgroundBoton;
     border-radius: 15px;
-    border: 2px double black;
+    border: $bordeBoton;
 }

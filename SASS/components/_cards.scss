@@ -1,11 +1,13 @@
+@import 'core/variables';
+
 /* CARDS */
 
 .card {
-    width: 280px;
+    width: $widthCard;
     /* Set width of cards */
-    display: flex;
+    display: $displayCard;
     /* Children use Flexbox */
-    flex-direction: column;
+    flex-direction: $displayDirectionCard;
     /* Rotate Axis */
     border: 1px solid lightgray;
     /* Set up Border */
@@ -19,7 +21,7 @@
 }
 
 .card-header {
-    text-align: center;
+    text-align: $cardHeaderAling;
     font-size: 12px;
     font-weight: 600;
     border-bottom: 1px solid lightgray;
@@ -45,7 +47,7 @@
 }
 
 .bloque {
-    display: flex;
+    display: $bloqueDisplay;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
